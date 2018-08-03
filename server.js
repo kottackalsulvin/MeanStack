@@ -15,7 +15,9 @@ app.use(express.static(__dirname + '/public'));
 app.use('/api',appRoutes);
 
 
-mongoose.connect('mongodb://kottackal:kottackal123@ds111562.mlab.com:11562/newdb',function(err){
+mongoose.connect('mongodb://localhost:27017/newdb',function(err){
+    //mongodb://localhost:27017/newdb
+    //mongodb://kottackal:kottackal123@ds111562.mlab.com:11562/newdb
     if(err){
         console.log('Not connected to the database:' +err);
     }else{

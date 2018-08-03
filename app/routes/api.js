@@ -14,7 +14,7 @@ module.exports = function(router){
             user.username=req.body.username;
             user.password=req.body.password;
             user.email=req.body.email;
-            console.log(user.email);
+            console.log('user' + user);
             
             if(req.body.username == null || req.body.username == '' || req.body.password == null || req.body.password == '' || req.body.email == null || req.body.email == '')
             { 
@@ -22,6 +22,7 @@ module.exports = function(router){
              }
             else{
                 user.save(function(err){
+                    console.log(user);
                 if(err){
                    // res.send('Username or Email already exists!');
                 res.json({success:false,message:'Username or Email already exists!'});
